@@ -1,0 +1,42 @@
+class Staff {
+    String name;
+    String position;
+    String email;
+    long tel;
+    int pay;
+    int age;
+
+    Staff(String name, String position, String email, int tel, int pay, int age) {
+        this.name = name;
+        this.position = position;
+        this.email = email;
+        this.tel = tel;
+        this.pay = pay;
+        this.age = age;
+
+    }
+    void printStaff ()  {
+        System.out.println(name+ " " + position + " " + email + " " + tel + " " + pay + " " + age);
+    }
+
+    void chendgStaff () {
+        if (age > 40) printStaff();
+    }
+}
+
+
+
+public class Main {
+
+    public static void main(String[] args) {
+        Staff[] persArrya = new Staff[5];
+        persArrya[0] = new Staff ("Василий", "Менеджер", "eye@land", 890990966, 65, 43);
+        persArrya[1] = new Staff("Петр", "Менеджер", "eye@land", 890990966, 70,41 );
+        persArrya[2] = new Staff("Андрей", "Курьер", "gogo@yes", 890980810, 55, 34);
+        persArrya[3] = new Staff("Николай Петрович", "Охраник", "gogo@yes", 890980810, 60, 60);
+        persArrya[4] = new Staff("Кирилл Алексеевич", "Инженер", "gogo@yes", 890980810, 80, 55);
+
+        for (int age = 0; age < persArrya.length; age++)
+            persArrya[age].chendgStaff();
+    }
+}
